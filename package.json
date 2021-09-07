@@ -1,0 +1,27 @@
+{
+  "name": "bigs",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "element-ui": "^2.15.6",
+    "vite-plugin-vue2": "^1.8.1",
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.2",
+    "vue-template-compiler": "^2.6.14",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.6.0",
+    "@vue/compiler-sfc": "^3.2.6",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^7.17.0",
+    "prettier": "^2.3.2",
+    "vite": "^2.5.2"
+  }
+}
