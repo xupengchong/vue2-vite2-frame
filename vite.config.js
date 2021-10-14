@@ -1,14 +1,20 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
 import { createVuePlugin } from 'vite-plugin-vue2'
 const path = require('path')
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [createVuePlugin()], //vue(),
+  plugins: [createVuePlugin()], // vue(),
   base: './',
   server: {
-    open: true
+    open: true,
+    host: '0.0.0.0',
+    proxy: {
+      '/jhfbw': {
+        target: 'http://192.168.1.101:8081',
+        changOrigin: true
+      }
+    }
   },
   resolve: {
     alias: {

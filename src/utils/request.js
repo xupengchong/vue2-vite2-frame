@@ -1,8 +1,5 @@
 import axios from 'axios'
-import { MessageBox, Message } from 'element-ui'
-import store from '@/store'
-import { getToken } from '@/utils/auth'
-import router from '../router'
+import { Message, MessageBox } from 'element-ui'
 // create an axios instance
 const service = axios.create({
   baseURL: '/api', // url = base url + request url
@@ -14,17 +11,16 @@ const service = axios.create({
 service.interceptors.request.use(
   request => {
     // console.log(store.getters.token, getToken())
-    let token = null
-    if (store.getters.token) token = store.getters.token
-    if (getToken() && !store.getters.token) {
-      token = JSON.parse(getToken())
-      store.commit('system/SET_TOKEN', token)
-    }
-    if (!token) MessageBox('登录超时').then(() => {
-      router.replace({path: '/login?name=1&age=2'})
-      location.reload()
-    })
-    request.params = {...request.params, token: '1', opercode: '1' }
+    // let token = null
+    // if (store.getters.token) token = store.getters.token
+    // if (getToken() && !store.getters.token) {
+    //   token = JSON.parse(getToken())
+    //   store.commit('system/SET_TOKEN', token)
+    // }
+    // if (!token) MessageBox('登录超时').then(() => {
+    //   router.replace({path: '/login?name=1&age=2'})
+    //   location.reload()
+    // })
     return request
   },
   config => {

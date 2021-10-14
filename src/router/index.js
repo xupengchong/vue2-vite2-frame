@@ -1,12 +1,12 @@
+import demo from '@/views/demo.vue'
 import Vue from 'vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
 const originalReplace = Router.prototype.replace
 Router.prototype.replace = function replace(location) {
-  return originalReplace.call(this, location).catch((err) => err)
+  return originalReplace.call(this, location).catch(err => err)
 }
-import demo from '@/views/demo.vue'
 
 export default new Router({
   routes: [

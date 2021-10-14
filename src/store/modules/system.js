@@ -4,7 +4,7 @@ const state = {
 }
 
 const getters = {
-  opercode: (state) => state.opercode
+  opercode: state => state.opercode
 }
 
 const mutations = {
