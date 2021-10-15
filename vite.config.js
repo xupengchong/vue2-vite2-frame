@@ -6,6 +6,9 @@ const path = require('path')
 export default defineConfig({
   plugins: [createVuePlugin()], // vue(),
   base: './',
+  build: {
+    outDir: 'builds'
+  },
   server: {
     open: true,
     host: '0.0.0.0',
