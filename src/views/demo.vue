@@ -2,19 +2,48 @@
 
 <template>
   <div>
-    <el-row>
-      <el-button>{{ a }}</el-button>
-      <el-button type="primary">主要按钮</el-button>
-      <el-button type="success">成功按钮</el-button>
-      <el-button type="info">信息按钮</el-button>
-      <el-button type="warning">警告按钮</el-button>
-      <el-button type="danger">危险按钮</el-button>
+    <el-row class="tac">
+      <el-col :span="12">
+        <h5>默认颜色</h5>
+        <el-menu
+          default-active="2"
+          class="el-menu-vertical-demo"
+          @open="handleOpen"
+          @close="handleClose"
+        >
+          <el-submenu index="1">
+            <template slot="title">
+              <i class="el-icon-location" />
+              <span>导航一</span>
+            </template>
+            <el-menu-item-group>
+              <template slot="title">分组一</template>
+              <el-menu-item index="1-1">选项1</el-menu-item>
+              <el-menu-item index="1-2">选项2</el-menu-item>
+            </el-menu-item-group>
+            <el-menu-item-group title="分组2">
+              <el-menu-item index="1-3">选项3</el-menu-item>
+            </el-menu-item-group>
+            <el-submenu index="1-4">
+              <template slot="title">选项4</template>
+              <el-menu-item index="1-4-1">选项1</el-menu-item>
+            </el-submenu>
+          </el-submenu>
+          <el-menu-item index="2">
+            <i class="el-icon-menu" />
+            <span slot="title">导航二</span>
+          </el-menu-item>
+          <el-menu-item index="3" disabled>
+            <i class="el-icon-document" />
+            <span slot="title">导航三</span>
+          </el-menu-item>
+          <el-menu-item index="4">
+            <i class="el-icon-setting" />
+            <span slot="title">导航四</span>
+          </el-menu-item>
+        </el-menu>
+      </el-col>
     </el-row>
-    <el-table :data="tableData" style="width: 100%">
-      <el-table-column prop="date" label="日期" width="180" />
-      <el-table-column prop="name" label="姓名" width="180" />
-      <el-table-column prop="address" label="地址" />
-    </el-table>
   </div>
 </template>
 <script>
